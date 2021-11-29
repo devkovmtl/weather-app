@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer src="main.bundle.js"></script><link href="main.css" rel="stylesheet"></head>
+  <body id="body">
+    <!-- Loading Circular -->
+    <div
+      class="
+        loading-spinner-container
+        main-loading-spinner
+        h-full
+        flex-col
+        items-center
+        justify-center
+        space-y-10
+        bg-gray-400
+      "
+    >
+      <div
+        class="
+          loading-spinner
+          w-20
+          h-20
+          border-4 border-gray-900
+          rounded-full
+          animate-spin
+        "
+      ></div>
+      <p class="font-semibold text-xl animate-pulse text-gray-900">
+        Loading ...
+      </p>
+    </div>
+    <!-- End Loading Circular -->
+    <!-- Main Container -->
+    <div class="hidden main-container h-screen bg-gray-900 overflow-x-auto">
+      <div class="h-screen bg-gray-900 overflow-x-auto">
+        <div class="px-2 pt-4 space-y-8">
+          <!-- Search Input for location -->
+          <form class="search-form border-2 rounded sm:max-w-md sm:mx-auto">
+            <div class="flex h-12 items-center px-1 space-x-1">
+              <input
+                class="
+                  search-form-input
+                  flex-1
+                  rounded-md
+                  h-10
+                  px-3
+                  outline-none
+                  text-gray-900
+                "
+                type="text"
+                name="location"
+                placeholder="Search Location..."
+              />
+              <button
+                type="input"
+                class="
+                  search-form-submit
+                  text-white
+                  hover:text-gray-900 hover:bg-white
+                  rounded-md
+                  p-1
+                  transition
+                  duration-300
+                  ease-in-out
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- card info location and current temp -->
+          <div class="h-40 flex max-w-md sm:mx-auto">
+            <div
+              class="flex-1 space-y-1 flex flex-col justify-between items-start"
+            >
+              <h1
+                class="location-title text-3xl sm:text-4xl text-white font-bold"
+              >
+                Montreal, QC
+              </h1>
+              <div>
+                <p
+                  class="
+                    location-date
+                    text-xl
+                    sm:text-2xl
+                    font-normal
+                    text-white
+                  "
+                >
+                  Lun. 22 now
+                </p>
+                <p
+                  class="
+                    location-time
+                    text-lg
+                    sm:text-xl
+                    font-normal
+                    text-white
+                  "
+                >
+                  10:09
+                </p>
+              </div>
+            </div>
+            <div class="px-2 space-y-2 flex flex-col items-end justify-between">
+              <h1
+                class="
+                  location-temperature
+                  text-3xl
+                  sm:text-4xl
+                  text-white
+                  font-extrabold
+                "
+              >
+                3℃ <span>🌤</span>
+              </h1>
+              <!-- <button
+                class="
+                  change-temperature
+                  bg-white
+                  rounded-lg
+                  px-2
+                  py-1
+                  flex
+                  items-center
+                  font-medium
+                  text-gray-900
+                  hover:bg-gray-500 hover:text-white
+                "
+              >
+                Display ℉
+              </button> -->
+            </div>
+          </div>
+
+          <!-- row for more   -->
+          <div
+            class="
+              more-info-container
+              flex
+              items-center
+              justify-end
+              h-20
+              max-w-md
+              sm:mx-auto
+              ml-auto
+              text-white
+            "
+          >
+            <div class="card-more-info p-2 rounded-md border-2">
+              <p class="font-thin">Feels Like</p>
+              <p class="feel_like flex justify-end">-3℃</p>
+            </div>
+
+            <div class="p-2 rounded-md border-2">
+              <p class="font-thin">Wind Speed</p>
+              <p class="wind_speed flex justify-end">33°km/h</p>
+            </div>
+
+            <div class="p-2 rounded-md border-2">
+              <p class="font-thin">Humidity</p>
+              <p class="more_humidity flex justify-end">70%</p>
+            </div>
+          </div>
+
+          <!-- Daily / Hourly -->
+          <div class="col-week-day-container space-y-2">
+            <!-- row Daily -->
+            <div
+              class="
+                col-day-card
+                flex
+                items-center
+                border-2 border-white
+                bg-white bg-opacity-10
+                text-white
+                px-5
+                py-2
+                rounded-md
+                max-w-xs
+                mx-auto
+              "
+            >
+              <p class="flex-1 font-medium uppercase">Tuesday</p>
+              <div class="mx-8 flex flex-col items-end">
+                <p>22 ℃</p>
+                <p class="font-thin">Feels: 16 ℃</p>
+              </div>
+              <span>🌤</span>
+            </div>
+            <!-- end row -->
+
+            <!-- row Daily -->
+            <div
+              class="
+                flex
+                items-center
+                border-2 border-white
+                bg-white bg-opacity-10
+                text-white
+                px-5
+                py-2
+                rounded-md
+                max-w-xs
+                mx-auto
+              "
+            >
+              <p class="flex-1 font-medium uppercase">Tuesday</p>
+              <div class="mx-8 flex flex-col items-end">
+                <p>22 ℃</p>
+                <p class="font-thin">Feels: 16 ℃</p>
+              </div>
+              <span>🌤</span>
+            </div>
+            <!-- end row -->
+
+            <!-- row Daily -->
+            <div
+              class="
+                flex
+                items-center
+                border-2 border-white
+                bg-white bg-opacity-10
+                text-white
+                px-5
+                py-2
+                rounded-md
+                max-w-xs
+                mx-auto
+              "
+            >
+              <p class="flex-1 font-medium uppercase">Tuesday</p>
+              <div class="mx-8 flex flex-col items-end">
+                <p>22 ℃</p>
+                <p class="font-thin">Feels: 16 ℃</p>
+              </div>
+              <span>🌤</span>
+            </div>
+            <!-- end row -->
+
+            <!-- row Daily -->
+            <div
+              class="
+                flex
+                items-center
+                border-2 border-white
+                bg-white bg-opacity-10
+                text-white
+                px-5
+                py-2
+                rounded-md
+                max-w-xs
+                mx-auto
+              "
+            >
+              <p class="flex-1 font-medium uppercase">Tuesday</p>
+              <div class="mx-8 flex flex-col items-end">
+                <p>22 ℃</p>
+                <p class="font-thin">Feels: 16 ℃</p>
+              </div>
+              <span>🌤</span>
+            </div>
+            <!-- end row -->
+
+            <!-- row Daily -->
+            <div
+              class="
+                flex
+                items-center
+                border-2 border-white
+                bg-white bg-opacity-10
+                text-white
+                px-5
+                py-2
+                rounded-md
+                max-w-xs
+                mx-auto
+              "
+            >
+              <p class="flex-1 font-medium uppercase">Tuesday</p>
+              <div class="mx-8 flex flex-col items-end">
+                <p>22 ℃</p>
+                <p class="font-thin">Feels: 16 ℃</p>
+              </div>
+              <span>🌤</span>
+            </div>
+            <!-- end row -->
+
+            <!-- row Daily -->
+            <div
+              class="
+                flex
+                items-center
+                border-2 border-white
+                bg-white bg-opacity-10
+                text-white
+                px-5
+                py-2
+                rounded-md
+                max-w-xs
+                mx-auto
+              "
+            >
+              <p class="flex-1 font-medium uppercase">Tuesday</p>
+              <div class="mx-8 flex flex-col items-end">
+                <p>22 ℃</p>
+                <p class="font-thin">Feels: 16 ℃</p>
+              </div>
+              <span>🌤</span>
+            </div>
+            <!-- end row -->
+
+            <!-- row Daily -->
+            <div
+              class="
+                flex
+                items-center
+                border-2 border-white
+                bg-white bg-opacity-10
+                text-white
+                px-5
+                py-2
+                rounded-md
+                max-w-xs
+                mx-auto
+              "
+            >
+              <p class="flex-1 font-medium uppercase">Tuesday</p>
+              <div class="mx-8 flex flex-col items-end">
+                <p>22 ℃</p>
+                <p class="font-thin">Feels: 16 ℃</p>
+              </div>
+              <span>🌤</span>
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- End daily  -->
+        </div>
+        <!-- Container -->
+      </div>
+    </div>
+  </body>
+</html>
