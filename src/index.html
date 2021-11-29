@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body id="body">
+    <!-- Loading Circular -->
     <div
       class="
         loading-spinner-container
-        hidden
-        h-screen
+        main-loading-spinner
+        h-full
         flex-col
         items-center
         justify-center
@@ -32,8 +33,9 @@
         Loading ...
       </p>
     </div>
-
-    <div class="main-container h-screen bg-gray-900 overflow-x-auto">
+    <!-- End Loading Circular -->
+    <!-- Main Container -->
+    <div class="hidden main-container h-screen bg-gray-900 overflow-x-auto">
       <div class="h-screen bg-gray-900 overflow-x-auto">
         <div class="px-2 pt-4 space-y-8">
           <!-- Search Input for location -->
@@ -131,7 +133,7 @@
               >
                 3℃ <span>🌤</span>
               </h1>
-              <button
+              <!-- <button
                 class="
                   change-temperature
                   bg-white
@@ -146,7 +148,7 @@
                 "
               >
                 Display ℉
-              </button>
+              </button> -->
             </div>
           </div>
 
@@ -157,7 +159,6 @@
               flex
               items-center
               justify-end
-              space-x-1
               h-20
               max-w-md
               sm:mx-auto
